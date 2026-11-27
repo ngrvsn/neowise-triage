@@ -26,6 +26,10 @@
     const topics = { delivery: "Доставка", pricing: "Цена", other: "Другое" };
     const manualReview = "Нужен ручной разбор. Проверьте заявку и подготовьте ответ самостоятельно.";
     let latestRequest = 0;
+    message.addEventListener("input", () => {
+      ++latestRequest;
+      result.textContent = "";
+    });
     form.addEventListener("submit", async (event) => {
       event.preventDefault();
       const requestId = ++latestRequest;
